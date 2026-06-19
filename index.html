@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>站点介绍 · 九游</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Serif SC", Georgia, "Times New Roman", serif;
+            background-color: #f9f7f2;
+            color: #2d2a24;
+            line-height: 1.7;
+            padding: 2.5rem 1.25rem;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: rgba(255, 252, 245, 0.8);
+            padding: 2.8rem 2.2rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border-radius: 6px;
+        }
+
+        .hero {
+            margin-bottom: 2.6rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            border-left: 4px solid #b7a68b;
+            padding-left: 1.1rem;
+            color: #2e281f;
+        }
+
+        .hero p {
+            margin-top: 0.9rem;
+            font-size: 1.05rem;
+            color: #4f4940;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2.2rem 0 2rem;
+        }
+
+        .card {
+            background: #fdfbf7;
+            border: 1px solid #e7e1d6;
+            border-radius: 5px;
+            padding: 1.6rem 1.4rem 1.8rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #3e3a33;
+            border-bottom: 1px dashed #ddd6c9;
+            padding-bottom: 0.3rem;
+        }
+
+        .card p {
+            font-size: 0.97rem;
+            color: #4c463d;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #ede8dd;
+            color: #4a443c;
+            font-size: 0.78rem;
+            padding: 0.12rem 0.7rem;
+            border-radius: 12px;
+            margin-right: 0.3rem;
+            margin-top: 0.6rem;
+        }
+
+        .audience-box {
+            background: #f4efe6;
+            border-left: 5px solid #b19d82;
+            padding: 1.3rem 1.7rem;
+            border-radius: 0 6px 6px 0;
+            margin: 2.2rem 0;
+        }
+
+        .audience-box h2 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #3b352c;
+        }
+
+        .audience-box ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .audience-box li {
+            padding: 0.25rem 0;
+            color: #4b453c;
+        }
+
+        .audience-box li::before {
+            content: "·";
+            color: #9a8872;
+            font-weight: bold;
+            margin-right: 0.6rem;
+        }
+
+        .notice {
+            background: #f1ede3;
+            border: 1px solid #dad1c1;
+            border-radius: 5px;
+            padding: 1.2rem 1.5rem;
+            margin: 2.2rem 0 1.8rem;
+            font-size: 0.95rem;
+            color: #464036;
+        }
+
+        .notice strong {
+            color: #6b5f4d;
+        }
+
+        .faq-mini {
+            margin: 2.6rem 0 1.8rem;
+            border-top: 1px solid #e0d9cb;
+            padding-top: 1.8rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #e0d9cb;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 500;
+            color: #3f3a32;
+            font-size: 1rem;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            color: #9a8872;
+        }
+
+        .faq-mini details p {
+            margin: 0.6rem 0 0.2rem 0.4rem;
+            color: #4d473e;
+            font-size: 0.93rem;
+        }
+
+        .natural-link {
+            background: #faf7f0;
+            padding: 1rem 1.6rem;
+            border-radius: 5px;
+            margin: 2.4rem 0 0.2rem;
+            font-size: 0.98rem;
+            line-height: 1.8;
+            border: 1px solid #e3dbcd;
+        }
+
+        .natural-link a {
+            color: #735f4b;
+            text-decoration: underline;
+            text-underline-offset: 0.2rem;
+            font-weight: 500;
+        }
+
+        .natural-link a:hover {
+            color: #bb9a7a;
+        }
+
+        footer {
+            margin-top: 2.8rem;
+            font-size: 0.85rem;
+            color: #7d7569;
+            text-align: center;
+            border-top: 1px solid #e2dbcd;
+            padding-top: 1.6rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .container {
+                padding: 1.6rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card-grid {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>九游 · 站点说明</h1>
+            <p>一份关于工具站点定位、用途与可靠性的简要整理。以下内容均基于公开信息与普通用户视角编写，不构成官方声明。</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>主视觉 · 信息入口</h3>
+                <p>页面结构清晰，以游戏辅助资源整合为侧重。首页提供导航与内容索引，方便使用者快速定位感兴趣的部分。</p>
+                <span class="tag">轻量</span>
+                <span class="tag">索引风格</span>
+            </div>
+            <div class="card">
+                <h3>用途 · 辅助参考</h3>
+                <p>主要面向需要查阅游戏相关信息、了解社区动态的用户。内容以聚合与展示为主，不作为直接下载或交易平台。</p>
+                <span class="tag">信息聚合</span>
+                <span class="tag">社区参考</span>
+            </div>
+            <div class="card">
+                <h3>内容组织</h3>
+                <p>分类模块明确，尽量减少无关信息干扰。站内链接多指向资料页或常见问题解答，适合快速浏览查证。</p>
+                <span class="tag">分类清晰</span>
+                <span class="tag">直达内容</span>
+            </div>
+        </div>
+
+        <div class="audience-box">
+            <h2>适合人群</h2>
+            <ul>
+                <li>习惯自行查找游戏攻略与版本动态的玩家</li>
+                <li>希望了解某款游戏社区讨论趋势的观察者</li>
+                <li>需要快速访问常用游戏服务链接的轻度用户</li>
+                <li>对站点内容持审慎态度、重视信息交叉验证的浏览者</li>
+            </ul>
+        </div>
+
+        <div class="notice">
+            <strong>🧭 可信说明</strong> 本介绍页所指向的站点由第三方维护，内容来源及更新频率请自行判断。建议结合多个可靠渠道获取游戏信息。本站不存储任何文件，也不对第三方内容的准确性负责。
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>该站点主要提供什么类型的信息？</summary>
+                <p>以游戏相关资讯、社区讨论摘要及导航链接为主，不涉及支付、下载或账号服务。</p>
+            </details>
+            <details>
+                <summary>内容更新是否及时？</summary>
+                <p>更新节奏取决于维护方。部分页面可能标注最后修改时间，浏览时可留意相关标识。</p>
+            </details>
+            <details>
+                <summary>使用前需要注意什么？</summary>
+                <p>游戏类站点可能包含用户生成内容。建议对活动公告、福利类信息保持基本判断，避免泄露个人敏感数据。</p>
+            </details>
+        </div>
+
+        <div class="natural-link">
+            📎 如果你是第一次了解这个站点，不妨先花几分钟浏览首页的结构。熟悉之后，你会发现 <a href="https://cn-cns-9you.com">九游</a> 在内容组织上侧重简洁和目录式引导，适合快速查阅。
+        </div>
+
+        <footer>
+            <span>本介绍页仅用于信息说明 · 与所提及站点无隶属关系</span>
+        </footer>
+    </div>
+</body>
+</html>

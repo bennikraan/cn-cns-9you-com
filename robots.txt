@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bennikraan.github.io/cn-cns-9you-com/sitemap.xml
